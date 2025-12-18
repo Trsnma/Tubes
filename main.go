@@ -5,35 +5,61 @@ import (
 )
 
 func main() {
-	var harga []float64 
-	var diskon int
-	// var inputHarga float64
 
-	totalPembelian := 0
+	var (
+		harga []int
+		inputHarga int
+		jumlahBarang int
+		totalPembelian int
+		setelahDiskon float32
+		diskon float32
+		// kosong bool 
+		dummy string
+	)
+
+	const (
+		diskon5 float32 = 0.05
+		diskon10 float32 = 0.10
+		diskon20 float32 = 0.20
+	)
 	
 	fmt.Println(">> Selamat datang di GTR MART, silahkan masukkan harga dari setiap barang yang anda beli\n>> Masukkan harga HARUS menggunakan tanda titik (desimal)\n>> Input angka 0.0 untuk menyelesaikan\n")
-	n := 1
-	i := 1
-
-
-	for m := 0; m == n; m++ {
-		fmt.Printf("Harga Barang ke %d : ", i)
-	    fmt.Scanf("%f\n", &harga[m])
-
-		if harga[m] != 1  {
-			fmt.Print("EROR")
-		} else if harga[m] < 0.0 {
-			fmt.Print("EROR")
-		} else if harga[m] == 0.0 {
-			m = n
-		}
-
-		if harga[m] > 0.0 {
-			n++
-		}
-	}
 	
+
+	fmt.Print("\nMasukkan jumlah barang yang anda beli z: ")
+	jumlahBarang = -1
+	fmt.Scan(&jumlahBarang)
+
+	if jumlahBarang > 1000{
+		fmt.Print("Masukkan jumlah barang yang anda beli : ")
+		fmt.Scan(&jumlahBarang)
+	} 
 	
+	if jumlahBarang > 0 && jumlahBarang <= 1000 {
+		totalPembelian = 0
+		i := 0 
+		for i < jumlahBarang {
+			fmt.Printf("Masukkan harga barang ke - %d : ", i+1)
+			inputHarga = -1
+			fmt.Scan(&inputHarga)
+
+			if inputHarga > 0 {
+				harga = append(harga, inputHarga)
+				totalPembelian += inputHarga
+				i++
+			} else if inputHarga == 0 {
+				fmt.Println("Input harga tidak boleh 0 sebelum semua barang diinput")
+			} else if inputHarga == 1001 {
+				i--
+			}else {
+				fmt.Println("Input harga tidak boleh negatif")
+				fmt.Scanf("%s", &dummy)
+			}
+		}
+	} 
+
+
+
 	l := len(harga)
 	
 	for i := 0; i < l - 1; i++ {
@@ -43,35 +69,33 @@ func main() {
 			}
 		}
 	}
+
 	
 	// --- Perhitungan Diskon ---
 	
-if totalPembelian >= 100.000 && totalPembelian < 200.000  {
-      diskon = 5
-  } else if totalPembelian >= 200.000 && totalPembelian < 300.000 {
-      diskon = 10
-  } else if totalPembelian >= 300.000 {
-      diskon = 20
-  }
-	
-	hasilDiskon := diskon/100
-	// Perhitungan sudah natural karena totalPembelian adalah float64
-	setelahDiskon := totalPembelian - (totalPembelian*hasilDiskon)
-	
+	if totalPembelian >= 100000 && totalPembelian < 200000  {
+		diskon = diskon5
+	} else if totalPembelian >= 200000 && totalPembelian < 300000 {
+		diskon = diskon10
+	} else if totalPembelian >= 300000 {
+		diskon = diskon20
+	} else if totalPembelian == 0 || totalPembelian < 100000 {
+		diskon = 0
+	}
+
+	setelahDiskon = float32(totalPembelian) - (float32(totalPembelian)*diskon)
+	setelahDiskon = float32(int(setelahDiskon + 0.5)) // pembulatan ke atas
 
 	fmt.Println("\n=========================================================================================")
-	if harga == nil {
+	if jumlahBarang <= 0 {
 		fmt.Println("\n>> KAMU TIDAK MEMBELI BARANG APAPUN ")
-	} else {
-		fmt.Println("\nUrutan Harga :", harga)
+	} else if len(harga) != jumlahBarang {
+		fmt.Println("\n>> PEMBELIAN ANDA DIBATALKAN")
 	}
-	
+	fmt.Println("\nUrutan Harga :", harga)
+	fmt.Printf("Total Pembelian Anda : %d\n", totalPembelian)
+	fmt.Println("Diskon yang anda peroleh :", diskon*100, "%")
+	fmt.Printf("Total pembelian setelah diskon : %.f\n", setelahDiskon)
 
-	// 🚨 PERUBAHAN 6: Mencetak Total Pembelian sebagai float64 (%.2f)
-	fmt.Printf("Total Pembelian Anda : %.3f\n", totalPembelian)
-	fmt.Printf("Diskon yang anda peroleh ( dalam bentuk persen ) : %.0f \n", diskon)
-	fmt.Printf("Total pembelian setelah diskon : %.3f\n", setelahDiskon)
-	
-	
 	fmt.Println("\n=========================================================================================")
 }
