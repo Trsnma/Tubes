@@ -17,6 +17,7 @@ func main() {
 	)
 
 	const (
+		batasBarang int     = 100
 		diskon5  float32 = 0.05
 		diskon10 float32 = 0.10
 		diskon20 float32 = 0.20
@@ -28,13 +29,13 @@ func main() {
 	jumlahBarang = -1
 	fmt.Scan(&jumlahBarang)
 
-	if jumlahBarang > 1000 {
+	if jumlahBarang > batasBarang {
 		fmt.Println(">> [ERROR] Jumlah barang tidak boleh lebih dari 1000 ")
 		fmt.Print("Masukkan jumlah barang yang anda beli : ")
 		fmt.Scan(&jumlahBarang)
 	}
 
-	if jumlahBarang > 0 && jumlahBarang <= 1000 {
+	if jumlahBarang > 0 && jumlahBarang <= batasBarang {
 		totalPembelian = 0
 		i := 0
 		for i < jumlahBarang {
@@ -48,7 +49,7 @@ func main() {
 				i++
 			} else if inputHarga == 0 {
 				fmt.Println("Input harga tidak boleh 0 sebelum semua barang diinput")
-			} else if inputHarga == 1001 {
+			} else if inputHarga == 101 {
 				i--
 			} else {
 				fmt.Println("Input harga tidak boleh negatif")
