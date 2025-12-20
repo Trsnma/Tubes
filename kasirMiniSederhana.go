@@ -14,7 +14,7 @@ func main() {
 		setelahDiskon  float32
 		diskon         float32
 		kosong         bool
-		dummy          string
+		namaPembeli    string
 	)
 
 	const (
@@ -63,7 +63,6 @@ func main() {
 				i++
 			} else if inputHarga < 0 {
 				fmt.Println(">> [ERROR] Harga barang tidak boleh negatif, silahkan masukkan kembali")
-				fmt.Scanf("%s", &dummy)
 			} else if inputHarga == 0 {
 				i = jumlahBarang
 			}
@@ -92,6 +91,10 @@ func main() {
 		} else if totalPembelian == 0 || totalPembelian < 100000 {
 			diskon = 0
 		}
+		fmt.Print("Masukkan nama pembeli : ")
+		fmt.Scan(&namaPembeli)
+		fmt.Println("Terimakasih telah berbelanja di GTR MART", namaPembeli)
+
 	}
 	setelahDiskon = float32(totalPembelian) - (float32(totalPembelian) * diskon)
 	setelahDiskon = float32(int(setelahDiskon + 0.5)) // pembulatan ke atas
