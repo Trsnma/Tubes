@@ -24,13 +24,13 @@ func main() {
 		diskon30 float32 = 0.30
 	)
 
-	fmt.Println("\n==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==")
-	fmt.Println("==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==")
-	fmt.Println("==                                  WELCOME TO GTR MART                                 ==")
-	fmt.Println("==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==")
-	fmt.Println("==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==")
+	fmt.Println("\n==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==")
+	fmt.Println("==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==")
+	fmt.Println("==                                      WELCOME TO GTR MART                                     ==")
+	fmt.Println("==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==")
+	fmt.Println("==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==")
 
-	fmt.Println("\n>> Selamat datang di GTR MART by Muhammad Ghassan Denaprinsyah and Muhammad Trisnatama Derdiansyah, silahkan masukkan harga dari setiap barang yang anda beli\n>> Masukkan harga tanpa menggunakan tanda titik atau koma (desimal)\n>> Masukkan harga 0 (nol) untuk membatalkan pembelian")
+	fmt.Println("\n>> Selamat datang di GTR MART by Muhammad Ghassan Denaprinsyah and Muhammad Trisnatama Derdiansyah.\n>> Silahkan masukkan harga dari setiap barang yang anda beli\n>> Masukkan harga tanpa menggunakan tanda titik atau koma (desimal)\n>> Masukkan harga 0 (nol) untuk membatalkan pembelian")
 
 	// --- Input Jumlah Barang ---
 	fmt.Print("\nMasukkan jumlah barang yang anda beli : ")
@@ -39,7 +39,7 @@ func main() {
 
 	// --- Validasi Jumlah Barang ---
 	for jumlahBarang < 0 {
-		fmt.Println(">> [ERROR] Jumlah barang tidak boleh tidak boleh negatif")
+		fmt.Println(">> [ERROR] Jumlah barang tidak boleh negatif dan berupa karakter")
 		fmt.Print("Masukkan jumlah barang yang anda beli : ")
 		fmt.Scan(&jumlahBarang)
 	}
@@ -61,7 +61,7 @@ func main() {
 				totalPembelian += inputHarga
 				i++
 			} else if inputHarga < 0 {
-				fmt.Println(">> [ERROR] Harga barang tidak boleh negatif, silahkan masukkan kembali")
+				fmt.Println(">> [ERROR] Harga barang tidak boleh negatif dan berupa karakter, silahkan masukkan kembali")
 			} else if inputHarga == 0 {
 				i = jumlahBarang
 			}
