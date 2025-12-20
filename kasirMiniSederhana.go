@@ -91,6 +91,7 @@ func main() {
 		} else if totalPembelian == 0 || totalPembelian < 100000 {
 			diskon = 0
 		}
+		// --- Input Nama Pembeli ---
 		fmt.Print("Masukkan nama pembeli : ")
 		fmt.Scan(&namaPembeli)
 		fmt.Println("Terimakasih telah berbelanja di GTR MART", namaPembeli)
