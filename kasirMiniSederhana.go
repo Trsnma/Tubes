@@ -104,10 +104,10 @@ func main() {
 		fmt.Println("\n>> ANDA TIDAK MEMBELI BARANG APAPUN ")
 	} else if inputHarga == 0 {
 		fmt.Println("\n>> PEMBELIAN ANDA DIBATALKAN")
-		// harga = nil
-		// totalPembelian = 0
-		// diskon = 0
-		// setelahDiskon = 0
+		harga = nil
+		totalPembelian = 0
+		diskon = 0
+		setelahDiskon = 0
 	}
 
 	fmt.Println("\nUrutan Harga :", harga)
