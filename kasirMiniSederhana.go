@@ -25,7 +25,7 @@ func main() {
 		diskon30 float32 = 0.30
 	)
 
-	fmt.Println("==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==")
+	fmt.Println("\n==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==")
 	fmt.Println("==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==")
 	fmt.Println("==                                  WELCOME TO GTR MART                                 ==")
 	fmt.Println("==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==")
@@ -65,7 +65,8 @@ func main() {
 			} else if inputHarga < 0 {
 				fmt.Println(">> [ERROR] Harga barang tidak boleh negatif, silahkan masukkan kembali")
 				fmt.Scanf("%s", &dummy)
-			}
+			} else if inputHarga == 0 {
+				i = jumlahBarang
 		}
 	}
 
@@ -100,9 +101,13 @@ func main() {
 	fmt.Println("\n=========================================================================================")
 	// --- Kondisi Pembatalan Pembelian ---
 	if kosong == true {
-		fmt.Println("\n>> KAMU TIDAK MEMBELI BARANG APAPUN ")
+		fmt.Println("\n>> ANDA TIDAK MEMBELI BARANG APAPUN ")
 	} else if inputHarga == 0 {
 		fmt.Println("\n>> PEMBELIAN ANDA DIBATALKAN")
+		// harga = nil
+		// totalPembelian = 0
+		// diskon = 0
+		// setelahDiskon = 0
 	}
 
 	fmt.Println("\nUrutan Harga :", harga)
@@ -111,4 +116,5 @@ func main() {
 	fmt.Printf("Total pembelian setelah diskon : %.f\n", setelahDiskon)
 
 	fmt.Println("\n=========================================================================================")
+}
 }
