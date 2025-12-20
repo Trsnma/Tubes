@@ -25,26 +25,27 @@ func main() {
 		diskon30 float32 = 0.30
 	)
 
-	fmt.Println("==  ==  ==  ==  ==  ==  ==  ==  ==  ==")
-	fmt.Println("==  ==  ==  ==  ==  ==  ==  ==  ==  ==")
-	fmt.Println("==        WELCOME TO GTR MART       ==")
-	fmt.Println("==  ==  ==  ==  ==  ==  ==  ==  ==  ==")
-	fmt.Println("==  ==  ==  ==  ==  ==  ==  ==  ==  ==")
+	fmt.Println("==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==")
+	fmt.Println("==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==")
+	fmt.Println("==                                  WELCOME TO GTR MART                                 ==")
+	fmt.Println("==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==")
+	fmt.Println("==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==")
 
-	fmt.Println(">> Selamat datang di GTR MART, silahkan masukkan harga dari setiap barang yang anda beli\n>> Masukkan harga tanpa menggunakan tanda titik atau koma (desimal)\n>> Maksimal barang yang dibeli adalah 1000 Item\n>> Masukkan harga 0 (nol) untuk membatalkan pembelian\n")
+	fmt.Println("\n>> Selamat datang di GTR MART, silahkan masukkan harga dari setiap barang yang anda beli\n>> Masukkan harga tanpa menggunakan tanda titik atau koma (desimal)\n>> Maksimal barang yang dibeli adalah 1000 Item\n>> Masukkan harga 0 (nol) untuk membatalkan pembelian\n")
 
 	// --- Input Jumlah Barang ---
 	fmt.Print("\nMasukkan jumlah barang yang anda beli : ")
+	jumlahBarang = -1
 	fmt.Scan(&jumlahBarang)
 
 	// --- Validasi Jumlah Barang ---
-	if jumlahBarang > batasBarang {
-		fmt.Println(">> [ERROR] Jumlah barang tidak boleh lebih dari 1000 ")
+	for jumlahBarang > batasBarang || jumlahBarang < 0 {
+		fmt.Println(">> [ERROR] Jumlah barang tidak boleh lebih dari 1000 dan tidak boleh negatif")
 		fmt.Print("Masukkan jumlah barang yang anda beli : ")
 		fmt.Scan(&jumlahBarang)
 	}
 
-	if jumlahBarang <= 0 {
+	if jumlahBarang == 0 {
 		kosong = true
 	}
 
