@@ -97,7 +97,6 @@ func main() {
 
 	}
 	setelahDiskon = float32(totalPembelian) - (float32(totalPembelian) * diskon)
-	setelahDiskon = float32(int(setelahDiskon + 0.5)) // pembulatan ke atas
 
 	// --- Output ---
 	fmt.Println("\n=========================================================================================")
