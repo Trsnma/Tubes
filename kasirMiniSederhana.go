@@ -30,7 +30,7 @@ func main() {
 	fmt.Println("==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==")
 	fmt.Println("==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==")
 
-	fmt.Println("\n>> Selamat datang di GTR MART, silahkan masukkan harga dari setiap barang yang anda beli\n>> Masukkan harga tanpa menggunakan tanda titik atau koma (desimal)\n>> Masukkan harga 0 (nol) untuk membatalkan pembelian")
+	fmt.Println("\n>> Selamat datang di GTR MART by Muhammad Ghassan Denaprinsyah and Muhammad Trisnatama Derdiansyah, silahkan masukkan harga dari setiap barang yang anda beli\n>> Masukkan harga tanpa menggunakan tanda titik atau koma (desimal)\n>> Masukkan harga 0 (nol) untuk membatalkan pembelian")
 
 	// --- Input Jumlah Barang ---
 	fmt.Print("\nMasukkan jumlah barang yang anda beli : ")
