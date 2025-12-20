@@ -34,7 +34,6 @@ func main() {
 
 	// --- Input Jumlah Barang ---
 	fmt.Print("\nMasukkan jumlah barang yang anda beli : ")
-	jumlahBarang = -1
 	fmt.Scan(&jumlahBarang)
 
 	// --- Validasi Jumlah Barang ---
