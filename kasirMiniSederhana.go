@@ -102,13 +102,13 @@ func main() {
 	} else if inputHarga == 0 {
 		fmt.Println("\n>> PEMBELIAN ANDA DIBATALKAN")
 	} else if inputHarga > 0 {
-		fmt.Print("Masukkan nama pembeli : ")
-		fmt.Scan(&namaPembeli)
-		fmt.Println("Terimakasih dan silahkan datang kembali", namaPembeli)
 		fmt.Println("\nUrutan Harga :", harga)
 		fmt.Printf("Total Pembelian Anda : %d\n", totalPembelian)
 		fmt.Println("Diskon yang anda peroleh :", diskon*100, "%")
 		fmt.Printf("Total pembelian setelah diskon : %.f\n", setelahDiskon)
+		fmt.Print("Masukkan nama pembeli : ")
+		fmt.Scan(&namaPembeli)
+		fmt.Println("Terimakasih telah berbelanja di GTR Mart", namaPembeli)
 	}
 
 	fmt.Println("\n=========================================================================================")
