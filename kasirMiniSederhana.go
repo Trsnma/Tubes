@@ -93,7 +93,7 @@ func main() {
 		// --- Input Nama Pembeli ---
 		fmt.Print("Masukkan nama pembeli : ")
 		fmt.Scan(&namaPembeli)
-		fmt.Println("Terimakasih dan silahkan datang lagi pak", namaPembeli)
+		fmt.Println("Terimakasih dan silahkan datang kembali", namaPembeli)
 
 	}
 	setelahDiskon = float32(totalPembelian) - (float32(totalPembelian) * diskon)
