@@ -92,28 +92,28 @@ func main() {
 		} else if totalPembelian == 0 || totalPembelian < 100000 {
 			diskon = 0
 		}
-
-		setelahDiskon = float32(totalPembelian) - (float32(totalPembelian) * diskon)
-		setelahDiskon = float32(int(setelahDiskon + 0.5)) // pembulatan ke atas
-
-		// --- Output ---
-		fmt.Println("\n=========================================================================================")
-		// --- Kondisi Pembatalan Pembelian ---
-		if kosong == true {
-			fmt.Println("\n>> ANDA TIDAK MEMBELI BARANG APAPUN ")
-		} else if inputHarga == 0 {
-			fmt.Println("\n>> PEMBELIAN ANDA DIBATALKAN")
-			harga = nil
-			totalPembelian = 0
-			diskon = 0
-			setelahDiskon = 0
-		}
-
-		fmt.Println("\nUrutan Harga :", harga)
-		fmt.Printf("Total Pembelian Anda : %d\n", totalPembelian)
-		fmt.Println("Diskon yang anda peroleh :", diskon*100, "%")
-		fmt.Printf("Total pembelian setelah diskon : %.f\n", setelahDiskon)
-
-		fmt.Println("\n=========================================================================================")
 	}
+	setelahDiskon = float32(totalPembelian) - (float32(totalPembelian) * diskon)
+	setelahDiskon = float32(int(setelahDiskon + 0.5)) // pembulatan ke atas
+
+	// --- Output ---
+	fmt.Println("\n=========================================================================================")
+	// --- Kondisi Pembatalan Pembelian ---
+	if kosong == true {
+		fmt.Println("\n>> ANDA TIDAK MEMBELI BARANG APAPUN ")
+	} else if inputHarga == 0 {
+		fmt.Println("\n>> PEMBELIAN ANDA DIBATALKAN")
+		harga = nil
+		totalPembelian = 0
+		diskon = 0
+		setelahDiskon = 0
+	}
+
+	fmt.Println("\nUrutan Harga :", harga)
+	fmt.Printf("Total Pembelian Anda : %d\n", totalPembelian)
+	fmt.Println("Diskon yang anda peroleh :", diskon*100, "%")
+	fmt.Printf("Total pembelian setelah diskon : %.f\n", setelahDiskon)
+
+	fmt.Println("\n=========================================================================================")
+
 }
