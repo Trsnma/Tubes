@@ -95,7 +95,7 @@ func main() {
 	setelahDiskon = float32(totalPembelian) - (float32(totalPembelian) * diskon)
 
 	// --- Output ---
-	fmt.Println("\n=========================================================================================")
+	fmt.Println("\n==================================================================================================")
 	// --- Kondisi Pembatalan Pembelian ---
 	if kosong == true {
 		fmt.Println("\n>> ANDA TIDAK MEMBELI BARANG APAPUN ")
@@ -111,6 +111,6 @@ func main() {
 		fmt.Println("Terimakasih telah berbelanja di GTR Mart", namaPembeli)
 	}
 
-	fmt.Println("\n=========================================================================================")
+	fmt.Println("\n==================================================================================================")
 
 }
