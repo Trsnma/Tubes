@@ -54,7 +54,6 @@ func main() {
 		i := 0
 		for i < jumlahBarang {
 			fmt.Printf("Masukkan harga barang ke - %d : ", i+1)
-			inputHarga = -1
 			fmt.Scan(&inputHarga)
 
 			if inputHarga > 0 {
@@ -94,7 +93,7 @@ func main() {
 		// --- Input Nama Pembeli ---
 		fmt.Print("Masukkan nama pembeli : ")
 		fmt.Scan(&namaPembeli)
-		fmt.Println("Terimakasih telah berbelanja di GTR MART", namaPembeli)
+		fmt.Println("Terimakasih dan silahkan datang lagi pak", namaPembeli)
 
 	}
 	setelahDiskon = float32(totalPembelian) - (float32(totalPembelian) * diskon)
