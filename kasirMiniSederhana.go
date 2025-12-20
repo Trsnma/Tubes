@@ -18,11 +18,10 @@ func main() {
 	)
 
 	const (
-		batasBarang int     = 1000
-		diskon5     float32 = 0.05
-		diskon10    float32 = 0.10
-		diskon20    float32 = 0.20
-		diskon30    float32 = 0.30
+		diskon5  float32 = 0.05
+		diskon10 float32 = 0.10
+		diskon20 float32 = 0.20
+		diskon30 float32 = 0.30
 	)
 
 	fmt.Println("\n==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==")
@@ -31,7 +30,7 @@ func main() {
 	fmt.Println("==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==")
 	fmt.Println("==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==")
 
-	fmt.Println("\n>> Selamat datang di GTR MART, silahkan masukkan harga dari setiap barang yang anda beli\n>> Masukkan harga tanpa menggunakan tanda titik atau koma (desimal)\n>> Maksimal barang yang dibeli adalah 1000 Item\n>> Masukkan harga 0 (nol) untuk membatalkan pembelian")
+	fmt.Println("\n>> Selamat datang di GTR MART, silahkan masukkan harga dari setiap barang yang anda beli\n>> Masukkan harga tanpa menggunakan tanda titik atau koma (desimal)\n>> Masukkan harga 0 (nol) untuk membatalkan pembelian")
 
 	// --- Input Jumlah Barang ---
 	fmt.Print("\nMasukkan jumlah barang yang anda beli : ")
@@ -39,8 +38,8 @@ func main() {
 	fmt.Scan(&jumlahBarang)
 
 	// --- Validasi Jumlah Barang ---
-	for jumlahBarang > batasBarang || jumlahBarang < 0 {
-		fmt.Println(">> [ERROR] Jumlah barang tidak boleh lebih dari 1000 dan tidak boleh negatif")
+	for jumlahBarang < 0 {
+		fmt.Println(">> [ERROR] Jumlah barang tidak boleh tidak boleh negatif")
 		fmt.Print("Masukkan jumlah barang yang anda beli : ")
 		fmt.Scan(&jumlahBarang)
 	}
@@ -50,7 +49,7 @@ func main() {
 	}
 
 	// --- Input Harga Barang ---
-	if jumlahBarang > 0 && jumlahBarang <= batasBarang {
+	if jumlahBarang > 0 {
 		totalPembelian = 0
 		i := 0
 		for i < jumlahBarang {
